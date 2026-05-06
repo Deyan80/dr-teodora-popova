@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Д-р Теодора Попова — Нефролог | МБАЛ Хасково">
+<meta property="og:description" content="Лекар специализант по вътрешни болести и нефрология в МБАЛ Хасково. Участник в проекти за ранна диагностика на бъбречни заболявания.">
+<meta property="og:image" content="teodora_popova.jpg">
+<meta property="og:type" content="profile">
+<title>Д-р Теодора Попова — Нефролог</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --bg2: #ede7d9;
+    --text: #1a1510;
+    --text-muted: #6b5e4a;
+    --accent: #2c4a6e;
+    --accent2: #8b5e3c;
+    --gold: #c9a84c;
+    --line: rgba(44,74,110,0.15);
+    --card: rgba(255,255,255,0.65);
+    --shadow: 0 8px 48px rgba(44,74,110,0.10);
+  }
+  [data-theme="dark"] {
+    --bg: #0e1218;
+    --bg2: #141a24;
+    --text: #e8e0d0;
+    --text-muted: #8a9ab5;
+    --accent: #5b8dcf;
+    --accent2: #c49a6c;
+    --gold: #d4aa55;
+    --line: rgba(91,141,207,0.15);
+    --card: rgba(20,26,36,0.85);
+    --shadow: 0 8px 48px rgba(0,0,0,0.4);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    transition: background 0.4s, color 0.4s;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── CONTROLS BAR ── */
+  .controls {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .ctrl-btn {
+    background: var(--card);
+    border: 1px solid var(--line);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 7px 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s;
+    text-transform: uppercase;
+  }
+  .ctrl-btn:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .ctrl-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  /* ── HEADER / HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--accent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 80px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative circle */
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+    top: -120px;
+    left: -120px;
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 50%;
+    bottom: 60px;
+    right: -80px;
+  }
+
+  .hero-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-label::before {
+    content: '—';
+    margin-right: 10px;
+    color: var(--gold);
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.9s 0.2s both;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-title {
+    margin-top: 20px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.9s 0.4s both;
+  }
+
+  .hero-divider {
+    width: 56px;
+    height: 1px;
+    background: var(--gold);
+    margin: 28px 0;
+    position: relative;
+    z-index: 1;
+    animation: expandWidth 1s 0.6s both;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: rgba(255,255,255,0.75);
+    max-width: 340px;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.9s 0.7s both;
+  }
+
+  /* kidney SVG watermark */
+  .kidney-watermark {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.06;
+    width: 200px;
+    z-index: 0;
+  }
+
+  /* ── PHOTO PANEL ── */
+  .hero-right {
+    background: var(--bg2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo-frame {
+    position: relative;
+    width: 340px;
+    height: 440px;
+    animation: fadeUp 1s 0.3s both;
+  }
+
+  .photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -12px -12px 12px 12px;
+    border: 1px solid var(--gold);
+    opacity: 0.4;
+    z-index: 0;
+  }
+
+  .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    position: relative;
+    z-index: 1;
+    display: block;
+    background: var(--bg);
+  }
+
+  .photo-no-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, var(--bg), var(--bg2));
+    position: relative;
+    z-index: 1;
+    gap: 16px;
+    color: var(--text-muted);
+  }
+  .photo-no-img svg { opacity: 0.3; }
+  .photo-no-img span {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  .photo-caption {
+    position: absolute;
+    bottom: -36px;
+    right: 0;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* decorative lines behind photo */
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 48px,
+        var(--line) 48px,
+        var(--line) 49px
+      );
+    opacity: 0.5;
+  }
+
+  /* ── SCROLL INDICATOR ── */
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 64px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    z-index: 2;
+    animation: fadeUp 1s 1.2s both;
+  }
+  .scroll-hint::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 96px 0;
+    position: relative;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+    max-width: 80px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 48px;
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .about-text {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-muted);
+  }
+  .about-text p + p { margin-top: 20px; }
+  .about-text strong { color: var(--text); font-weight: 500; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .stat-card {
+    background: var(--bg);
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .stat-card:hover { background: var(--card); }
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.4s;
+  }
+  .stat-card:hover::after { width: 100%; }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── TIMELINE ── */
+  .section-alt { background: var(--bg2); }
+
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), var(--accent), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 0 0 48px 40px;
+    opacity: 0;
+    transform: translateX(-16px);
+    animation: slideIn 0.6s forwards;
+  }
+  .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+  .timeline-item:nth-child(2) { animation-delay: 0.25s; }
+  .timeline-item:nth-child(3) { animation-delay: 0.4s; }
+  .timeline-item:nth-child(4) { animation-delay: 0.55s; }
+
+  .timeline-dot {
+    position: absolute;
+    left: -5px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--bg2);
+  }
+
+  .timeline-year {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .timeline-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .timeline-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ── PROJECT CARD ── */
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    backdrop-filter: blur(8px);
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 64px rgba(44,74,110,0.15);
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+  }
+
+  .project-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(44,74,110,0.08);
+    border: 1px solid rgba(44,74,110,0.15);
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+  }
+  .project-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s infinite;
+  }
+
+  .project-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border: 1px solid var(--line);
+    color: var(--text-muted);
+    border-radius: 3px;
+  }
+
+  /* ── EXPERTISE GRID ── */
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-top: 48px;
+  }
+
+  .expertise-item {
+    background: var(--bg);
+    padding: 36px 28px;
+    transition: background 0.3s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .expertise-item:hover { background: var(--card); }
+
+  .expertise-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .expertise-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .expertise-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── CONTACT FOOTER ── */
+  .footer {
+    background: var(--accent);
+    color: #fff;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 50%;
+    top: -300px;
+    right: -200px;
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 8px;
+  }
+
+  .footer-role {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-end;
+  }
+
+  .footer-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: var(--gold); }
+  .footer-link svg { opacity: 0.5; }
+
+  .footer-share-btn {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+  .footer-share-btn:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #1a1510;
+  }
+
+  /* ── QUOTE ── */
+  .quote-section {
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+  }
+  .quote-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(44,74,110,0.06) 0%, transparent 70%);
+  }
+
+  .quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    color: var(--accent);
+    opacity: 0.1;
+    line-height: 0.6;
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 36px);
+    font-style: italic;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+    color: var(--text);
+    position: relative;
+  }
+
+  .quote-attr {
+    margin-top: 24px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    position: relative;
+  }
+
+  /* ── LANG SWITCHER CONTENT ── */
+  [lang-content="en"] { display: none; }
+  body.lang-en [lang-content="bg"] { display: none; }
+  body.lang-en [lang-content="en"] { display: block; }
+  body.lang-en [lang-content="en"].inline { display: inline; }
+  body.lang-en [lang-content="bg"].inline { display: none; }
+  [lang-content="en"].inline { display: none; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes expandWidth {
+    from { width: 0; }
+    to   { width: 56px; }
+  }
+  @keyframes slideIn {
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 120px 32px 48px; min-height: 60vh; }
+    .hero-right { min-height: 50vw; }
+    .photo-frame { width: 220px; height: 290px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .expertise-grid { grid-template-columns: 1fr 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-links { align-items: flex-start; }
+    .controls { top: 12px; right: 12px; gap: 6px; }
+    .ctrl-btn { padding: 6px 10px; font-size: 9px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- CONTROLS -->
+<div class="controls">
+  <button class="ctrl-btn" id="langBtn" onclick="toggleLang()">EN</button>
+  <button class="ctrl-btn" id="themeBtn" onclick="toggleTheme()">◐ Тъмна</button>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-left">
+
+    <!-- kidney watermark SVG -->
+    <svg class="kidney-watermark" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 10C50 10 10 60 10 130C10 200 50 280 100 290C150 280 190 200 190 130C190 60 150 10 100 10Z" stroke="white" stroke-width="2"/>
+      <path d="M100 40C70 40 40 75 40 130C40 185 70 255 100 265" stroke="white" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <circle cx="100" cy="130" r="25" stroke="white" stroke-width="1.5"/>
+      <path d="M85 125 Q100 105 115 125" stroke="white" stroke-width="1.5" fill="none"/>
+      <path d="M85 135 Q100 155 115 135" stroke="white" stroke-width="1.5" fill="none"/>
+    </svg>
+
+    <p class="hero-label">
+      <span lang-content="bg">Академичен профил · МБАЛ Хасково</span>
+      <span lang-content="en">Academic Profile · MBAL Haskovo</span>
+    </p>
+    <h1 class="hero-name">
+      Д-р<br>
+      <em>Теодора</em><br>
+      Попова
+    </h1>
+    <p class="hero-title">
+      <span lang-content="bg">Лекар специализант · Нефрология · Вътрешни болести</span>
+      <span lang-content="en">Medical Resident · Nephrology · Internal Medicine</span>
+    </p>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">
+      <span lang-content="bg">„Здравето на бъбреците е здравето на живота."</span>
+      <span lang-content="en">"Kidney health is the health of life."</span>
+    </p>
+    <div class="scroll-hint">
+      <span lang-content="bg">Превъртете надолу</span>
+      <span lang-content="en">Scroll down</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="photo-frame">
+      <img
+        id="profilePhoto"
+        class="photo-placeholder"
+        src="teodora_popova.jpg"
+        alt="Д-р Теодора Попова"
+        onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='flex';"
+      >
+      <div class="photo-no-img" id="photoFallback" style="display:none;">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="24" r="12" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M8 56C8 44 18 36 32 36C46 36 56 44 56 56" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <span>
+          <span lang-content="bg">Поставете снимка:<br>teodora_popova.jpg</span>
+          <span lang-content="en">Add photo:<br>teodora_popova.jpg</span>
+        </span>
+      </div>
+      <p class="photo-caption">
+        <span lang-content="bg">МБАЛ Хасково АД</span>
+        <span lang-content="en">MBAL Haskovo</span>
+      </p>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="container">
+    <p class="section-label" lang-content="bg">За лекаря</p>
+    <p class="section-label" lang-content="en">About</p>
+    <div class="about-grid">
+      <div>
+        <h2 class="section-title" lang-content="bg">Посветена на <em>бъбречното здраве</em> на пациентите</h2>
+        <h2 class="section-title" lang-content="en">Dedicated to <em>renal health</em> of patients</h2>
+        <div class="about-text" lang-content="bg">
+          <p>Д-р Теодора Йорданова Попова е лекар специализант в <strong>МБАЛ Хасково АД</strong>, където работи в Нефрологично и Вътрешно отделение. Специализира се в диагностиката и лечението на бъбречни заболявания, с акцент върху ранното им разпознаване.</p>
+          <p>Участва активно в <strong>обществено значими медицински проекти</strong> за достъп до нефрологична помощ в отдалечени региони, съвместно с Асоциацията на пациентите с бъбречни заболявания и австрийски партньори.</p>
+          <p>Вярва, че <strong>профилактиката</strong> и ранната диагностика са ключът към предотвратяване на хронично бъбречно заболяване при уязвимите групи население.</p>
+        </div>
+        <div class="about-text" lang-content="en">
+          <p>Dr. Teodora Yordanova Popova is a medical resident at <strong>MBAL Haskovo AD</strong>, working in the Nephrology and Internal Medicine departments. She specializes in the diagnosis and treatment of kidney diseases, with emphasis on early detection.</p>
+          <p>She actively participates in <strong>socially significant medical projects</strong> providing nephrology access in remote regions, in collaboration with the Association of Patients with Kidney Diseases and Austrian partners.</p>
+          <p>She believes that <strong>prevention</strong> and early diagnosis are the key to preventing chronic kidney disease in vulnerable populations.</p>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">МБАЛ</div>
+          <div class="stat-label" lang-content="bg">Хасково АД</div>
+          <div class="stat-label" lang-content="en">Haskovo Hospital</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">18–60</div>
+          <div class="stat-label" lang-content="bg">Обхват на пациентите (год.)</div>
+          <div class="stat-label" lang-content="en">Patient age range</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2+</div>
+          <div class="stat-label" lang-content="bg">Активни проекти</div>
+          <div class="stat-label" lang-content="en">Active projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">🇦🇹</div>
+          <div class="stat-label" lang-content="bg">Австрийско партньорство</div>
+          <div class="stat-label" lang-content="en">Austrian partnership</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <div class="container">
+    <span class="quote-mark">"</span>
+    <p class="quote-text" lang-content="bg">Ранната диагностика е изключително важна, за да не се развие хронично бъбречно заболяване. В първите стадии няма симптоми.</p>
+    <p class="quote-text" lang-content="en">Early diagnosis is extremely important to prevent the development of chronic kidney disease. In the early stages there are no symptoms.</p>
+    <p class="quote-attr">— Д-р Теодора Попова, Haskovo.info, 2025</p>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<section class="section section-alt">
+  <div class="container">
+    <p class="section-label" lang-content="bg">Хронология</p>
+    <p class="section-label" lang-content="en">Timeline</p>
+    <h2 class="section-title" lang-content="bg">Образование & <em>Клиничен път</em></h2>
+    <h2 class="section-title" lang-content="en">Education & <em>Clinical path</em></h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year" lang-content="bg">Медицинско образование</div>
+        <div class="timeline-year" lang-content="en">Medical education</div>
+        <div class="timeline-title" lang-content="bg">Висше медицинско образование</div>
+        <div class="timeline-title" lang-content="en">Higher medical education</div>
+        <div class="timeline-desc" lang-content="bg">Придобита медицинска квалификация, завършена специализация по вътрешни болести и нефрология.</div>
+        <div class="timeline-desc" lang-content="en">Medical degree acquired, completed residency in internal medicine and nephrology.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">МБАЛ Хасково АД</div>
+        <div class="timeline-title" lang-content="bg">Вътрешно & Нефрологично отделение</div>
+        <div class="timeline-title" lang-content="en">Internal Medicine & Nephrology Dept.</div>
+        <div class="timeline-desc" lang-content="bg">Лекар специализант. Диагностика и лечение на бъбречни и вътрешни заболявания. Хемодиализа.</div>
+        <div class="timeline-desc" lang-content="en">Medical resident. Diagnosis and treatment of kidney and internal diseases. Hemodialysis.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2025</div>
+        <div class="timeline-title" lang-content="bg">Мобилен нефрологичен проект</div>
+        <div class="timeline-title" lang-content="en">Mobile Nephrology Screening Project</div>
+        <div class="timeline-desc" lang-content="bg">Безплатни профилактични прегледи в отдалечени селища на Хасковска и съседни области. Медицински ръководител на терен.</div>
+        <div class="timeline-desc" lang-content="en">Free preventive screenings in remote villages of Haskovo and neighboring regions. Field medical supervisor.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2025 – 2026</div>
+        <div class="timeline-title" lang-content="bg">Австрийско партньорство</div>
+        <div class="timeline-title" lang-content="en">Austrian Partnership</div>
+        <div class="timeline-desc" lang-content="bg">Съвместна работа с австрийска компания — дарение на два мобилни апарата за бъбречна диагностика. Разширяване обхвата на профилактичните прегледи.</div>
+        <div class="timeline-desc" lang-content="en">Collaboration with an Austrian company — donation of two mobile kidney diagnostic devices. Expanding the coverage of preventive screenings.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT -->
+<section class="section">
+  <div class="container">
+    <p class="section-label" lang-content="bg">Ключов проект</p>
+    <p class="section-label" lang-content="en">Key project</p>
+    <div class="project-card">
+      <div class="project-badge">
+        <span class="project-badge-dot"></span>
+        <span lang-content="bg">Активен · 2025</span>
+        <span lang-content="en">Active · 2025</span>
+      </div>
+      <h3 class="project-title" lang-content="bg">Безплатни нефрологични прегледи в отдалечени райони на Хасковска област</h3>
+      <h3 class="project-title" lang-content="en">Free Nephrology Screenings in Remote Areas of Haskovo Region</h3>
+      <p class="project-desc" lang-content="bg">
+        Проектът се развива съвместно с <strong>Асоциацията на пациентите с бъбречни заболявания и приятели</strong> — организация със седалище в Хасково. Целта е достигане до хора на възраст 18–60 години в отдалечени селища, където липсват специалисти и лаборатории.<br><br>
+        Финансиран частично чрез <strong>дарение от австрийска компания</strong>, с което са закупени два мобилни диагностични апарата. Прегледите се провеждат в мобилен кабинет от медицинска сестра в присъствието на д-р Попова, в почивни дни за удобство на населението. Паралелно се работи по промени в нормативната база за разширяване обхвата на ранната диагностика.
+      </p>
+      <p class="project-desc" lang-content="en">
+        The project is developed in collaboration with the <strong>Association of Patients with Kidney Diseases and Friends</strong> — an organization based in Haskovo. The goal is to reach people aged 18–60 in remote villages lacking specialists and laboratories.<br><br>
+        Partially funded through a <strong>donation from an Austrian company</strong>, which acquired two mobile diagnostic devices. Examinations are conducted in a mobile unit by a nurse under Dr. Popova's supervision, on weekends for community convenience. Parallel efforts are being made to amend regulations to expand early diagnosis access.
+      </p>
+      <div class="project-tags">
+        <span class="tag" lang-content="bg">Нефрология</span><span class="tag" lang-content="en">Nephrology</span>
+        <span class="tag" lang-content="bg">Профилактика</span><span class="tag" lang-content="en">Prevention</span>
+        <span class="tag" lang-content="bg">Мобилна медицина</span><span class="tag" lang-content="en">Mobile medicine</span>
+        <span class="tag">Austria partnership</span>
+        <span class="tag" lang-content="bg">Хасково регион</span><span class="tag" lang-content="en">Haskovo region</span>
+        <span class="tag" lang-content="bg">ХБЗ диагностика</span><span class="tag" lang-content="en">CKD diagnostics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="section section-alt">
+  <div class="container">
+    <p class="section-label" lang-content="bg">Области на компетентност</p>
+    <p class="section-label" lang-content="en">Areas of expertise</p>
+    <h2 class="section-title" lang-content="bg">Клинична <em>специализация</em></h2>
+    <h2 class="section-title" lang-content="en">Clinical <em>specialization</em></h2>
+    <div class="expertise-grid">
+      <div class="expertise-item">
+        <span class="expertise-icon">🫘</span>
+        <div class="expertise-name" lang-content="bg">Нефрология</div>
+        <div class="expertise-name" lang-content="en">Nephrology</div>
+        <p class="expertise-desc" lang-content="bg">Диагностика и лечение на бъбречни заболявания, хронична бъбречна недостатъчност, нефротичен синдром.</p>
+        <p class="expertise-desc" lang-content="en">Diagnosis and treatment of kidney diseases, chronic renal failure, nephrotic syndrome.</p>
+      </div>
+      <div class="expertise-item">
+        <span class="expertise-icon">🩺</span>
+        <div class="expertise-name" lang-content="bg">Вътрешни болести</div>
+        <div class="expertise-name" lang-content="en">Internal Medicine</div>
+        <p class="expertise-desc" lang-content="bg">Широкопрофилна вътрешна медицина. Системни заболявания с бъбречно засягане.</p>
+        <p class="expertise-desc" lang-content="en">Broad-spectrum internal medicine. Systemic diseases with renal involvement.</p>
+      </div>
+      <div class="expertise-item">
+        <span class="expertise-icon">💉</span>
+        <div class="expertise-name" lang-content="bg">Хемодиализа</div>
+        <div class="expertise-name" lang-content="en">Hemodialysis</div>
+        <p class="expertise-desc" lang-content="bg">Работа в отделение по хемодиализа на МБАЛ Хасково. Наблюдение на диализирани пациенти.</p>
+        <p class="expertise-desc" lang-content="en">Work in hemodialysis unit at MBAL Haskovo. Monitoring of dialysis patients.</p>
+      </div>
+      <div class="expertise-item">
+        <span class="expertise-icon">🔬</span>
+        <div class="expertise-name" lang-content="bg">Ранна диагностика</div>
+        <div class="expertise-name" lang-content="en">Early diagnostics</div>
+        <p class="expertise-desc" lang-content="bg">Профилактични прегледи и скрининг за ХБЗ в рискови групи. Мобилна диагностика.</p>
+        <p class="expertise-desc" lang-content="en">Preventive checkups and CKD screening in at-risk groups. Mobile diagnostics.</p>
+      </div>
+      <div class="expertise-item">
+        <span class="expertise-icon">🤝</span>
+        <div class="expertise-name" lang-content="bg">Обществена медицина</div>
+        <div class="expertise-name" lang-content="en">Public health</div>
+        <p class="expertise-desc" lang-content="bg">Работа с пациентски организации, местна власт и международни партньори за здравна достъпност.</p>
+        <p class="expertise-desc" lang-content="en">Collaboration with patient organizations, local authorities and international partners for health accessibility.</p>
+      </div>
+      <div class="expertise-item">
+        <span class="expertise-icon">📋</span>
+        <div class="expertise-name" lang-content="bg">Нормативна база</div>
+        <div class="expertise-name" lang-content="en">Regulatory affairs</div>
+        <p class="expertise-desc" lang-content="bg">Участие в разработване на промени в нормативната уредба за по-широк обхват на ранна диагностика.</p>
+        <p class="expertise-desc" lang-content="en">Participation in regulatory changes to broaden early diagnostics access.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">Д-р Теодора Попова</div>
+        <div class="footer-role" lang-content="bg">Нефролог · Вътрешно отделение · МБАЛ Хасково</div>
+        <div class="footer-role" lang-content="en">Nephrologist · Internal Medicine · MBAL Haskovo</div>
+      </div>
+      <div class="footer-links">
+        <a href="https://mbalhaskovo.bg" target="_blank" class="footer-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          mbalhaskovo.bg
+        </a>
+        <a href="https://doctiming.bg/doctors/%D1%82%D0%B5%D0%BE%D0%B4%D0%BE%D1%80%D0%B0-%D0%BF%D0%BE%D0%BF%D0%BE%D0%B2%D0%B0" target="_blank" class="footer-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          DocTiming профил
+        </a>
+        <a
+          id="fbShareBtn"
+          href="#"
+          onclick="shareFacebook(); return false;"
+          class="footer-share-btn"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          <span lang-content="bg">Сподели във Facebook</span>
+          <span lang-content="en">Share on Facebook</span>
+        </a>
+      </div>
+    </div>
+    <div style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(255,255,255,0.08); font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:0.1em; text-transform:uppercase; text-align:center;">
+      МБАЛ Хасково АД · бул. Съединение 49 · 038 606 700 · office@mbalhaskovo.bg
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── THEME ──
+  const themeBtn = document.getElementById('themeBtn');
+  function toggleTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+    const bgBg = { bg: 'Светла', dark: 'Тъмна' };
+    const bgEn = { bg: 'Light', dark: 'Dark' };
+    const newTheme = isDark ? 'bg' : 'dark';
+    themeBtn.textContent = (document.body.classList.contains('lang-en')
+      ? (newTheme === 'dark' ? '◑ Dark' : '◐ Light')
+      : (newTheme === 'dark' ? '◑ Тъмна' : '◐ Светла'));
+    themeBtn.classList.toggle('active', newTheme === 'dark');
+  }
+
+  // ── LANG ──
+  const langBtn = document.getElementById('langBtn');
+  function toggleLang() {
+    const isEn = document.body.classList.toggle('lang-en');
+    langBtn.textContent = isEn ? 'БГ' : 'EN';
+    langBtn.classList.toggle('active', isEn);
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    themeBtn.textContent = isDark
+      ? (isEn ? '◑ Dark' : '◑ Тъмна')
+      : (isEn ? '◐ Light' : '◐ Светла');
+  }
+
+  // ── FACEBOOK SHARE ──
+  function shareFacebook() {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent('Д-р Теодора Попова — Нефролог, МБАЛ Хасково');
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`,
+      '_blank',
+      'width=600,height=400'
+    );
+  }
+
+  // ── INTERSECTION OBSERVER for scroll animations ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.animationPlayState = 'running';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.timeline-item').forEach(el => {
+    el.style.animationPlayState = 'paused';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
